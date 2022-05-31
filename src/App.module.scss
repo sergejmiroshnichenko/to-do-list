@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  min-width: 60% !important;
+  box-sizing: border-box;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 18px;
+  height: 56px;
+
+  &:focus {
+    border: 3px solid #1976d2;
+    outline: none;
+    padding: 13px;
+  }
+
+  &::placeholder {
+    color: lightgrey;
+  }
+}
+
