@@ -6,6 +6,8 @@ import styles from './NoteItem.module.scss';
 import { ReactComponent as EditSVG } from "../../assets/edit.svg";
 import { ReactComponent as DeleteSVG } from "../../assets/delete.svg";
 // import { ReactComponent as CheckSVG } from "../../assets/check.svg";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from "react-bootstrap";
 
 
 const NoteItem = ({index, text}) => {
@@ -21,8 +23,8 @@ const NoteItem = ({index, text}) => {
             </div>
 
             <div className={styles.wrapper}>
-                <button className={styles.btn}><EditSVG /></button>
-                <button color='error' className={styles.btn}><DeleteSVG /></button>
+                <Button className={styles.btn} type="button" variant="btn btn-primary"><EditSVG /></Button>
+                <Button color='error' className={styles.btn} type="button" variant="btn btn-danger"><DeleteSVG /></Button>
             </div>
         </li>
     )

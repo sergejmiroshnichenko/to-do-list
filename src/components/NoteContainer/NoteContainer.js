@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NoteItem from "../NoteItem/NoteItem";
+import {useSelector} from 'react-redux';
 
 
-const NoteContainer = ({ notes }) => {
+const NoteContainer = () => {
 
-
-    console.log('notes', notes)
+    const notes = useSelector(state => state.notes);
 
     if (!notes) return <p style={{ fontSize: 24, marginLeft:20 }}>You don't have any notes yet</p>;
 
     return (
         <ul>
-            {notes && notes.map(({ text }, index) => <NoteItem index={index + 1} text={text} />)}
+            {notes && notes.map(({ text }, index) => <NoteItem index={index + 1} text={text} key={text} />)}
         </ul>
     )
 }
