@@ -2,22 +2,25 @@ import React from 'react';
 import classNames from "classnames";
 import PropTypes from 'prop-types';
 import styles from './NoteItem.module.scss';
-// import {Button, Checkbox} from "@mui/material";
+import Checkbox from '@material-ui/core/Checkbox';
 import { ReactComponent as EditSVG } from "../../assets/edit.svg";
 import { ReactComponent as DeleteSVG } from "../../assets/delete.svg";
 // import { ReactComponent as CheckSVG } from "../../assets/check.svg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "react-bootstrap";
+import {toggleIsDone} from '../../store/actionCreators/noteAC'
+import {useDispatch} from "react-redux";
 
 
-const NoteItem = ({index, text}) => {
+const NoteItem = ({index, text, id, isDone}) => {
 
-    const isDone = false;
-
+    const dispatch = useDispatch()
     return (
         <li className={classNames(styles.root, { [styles.rootDone]: isDone })}>
             <div className={styles.wrapper}>
-                <checkbox className={styles.checkbox} />
+                <Checkbox onChange={ () => {
+                    dispatch(toggleIsDone(id))
+                }} className={styles.checkbox} />
                 <span>{index}.</span>
                 <p className={classNames({ [styles.done]: isDone })}>{text}</p>
             </div>

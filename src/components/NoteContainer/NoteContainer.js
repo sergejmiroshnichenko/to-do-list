@@ -12,7 +12,7 @@ const NoteContainer = () => {
 
     return (
         <ul>
-            {notes && notes.map(({ text }, index) => <NoteItem index={index + 1} text={text} key={text} />)}
+            {notes && notes.map(({ text, isDone, id }, index) => <NoteItem id={id} isDone={isDone} index={index + 1} text={text} key={text} />)}
         </ul>
     )
 }

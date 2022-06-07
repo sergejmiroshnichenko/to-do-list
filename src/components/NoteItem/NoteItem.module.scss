@@ -31,6 +31,7 @@
     -webkit-line-clamp: 1;
     text-overflow: ellipsis;
     font-size: 1.2rem;
+    margin-top: 13px;
   }
 }
 
@@ -58,7 +59,7 @@
 }
 
 .done {
-  text-decoration: line-through;
+  text-decoration: line-through solid 2px;
 }
 
 .rootEdit {
